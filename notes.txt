@@ -1,0 +1,9 @@
+Things Used
+Next 13.4
+GPT-4 (?)
+TailwindCSS
+TypeScript
+Dnd
+Appwrite Cloud
+Headless UI
+Zustand
