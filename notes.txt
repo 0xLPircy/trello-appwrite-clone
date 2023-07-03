@@ -3,7 +3,7 @@ Next 13.4
 GPT-4 (?)
 TailwindCSS
 TypeScript
-Dnd
+react beautiful Dnd
 Appwrite Cloud
 Headless UI
 Zustand
