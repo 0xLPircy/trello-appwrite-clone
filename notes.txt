@@ -12,3 +12,7 @@ react avatar library
 
 
 Next js has to whitelist images before use, so in next.config
+
+for appwrite created database "appdatabase", then collection "todos", then attributes inside collection.
+added document which is an entry
+then added a bucket in storage called images to store images
