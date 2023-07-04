@@ -1,7 +1,12 @@
+'use client';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 
 const Board = () => {
+    useEffect(() => {
+
+    }, [])
+
     return (
         <DragDropContext>
             <Droppable droppableId='board' direction='horizontal' type="column">
