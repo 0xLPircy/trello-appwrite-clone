@@ -5,11 +5,13 @@ interface BoardState {
     getBoard: () => void;
 }
 
-const useBoatStore = create<BoardState>((set) => ({
+export const useBoardStore = create<BoardState>((set) => ({
     board: {
         columns: new Map<TypedColumn, Column>() //key and value pair
     },
     getBoard: async () => {
-        const board = await
+        const board = await getTodosGroupedByColumn();
+        set({ board });
     }
-})) 
+}))
+
