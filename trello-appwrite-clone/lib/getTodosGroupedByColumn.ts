@@ -1,4 +1,5 @@
-import { databases } from "@/appwrite"
+
+import { databases } from "@/appwrite";
 
 export const getTodosGroupedByColumn = async () => {
     const data = await databases.listDocuments(
@@ -6,5 +7,5 @@ export const getTodosGroupedByColumn = async () => {
         process.env.NEXT_PUBLIC_TODOS_COLLECTION_ID!
     );
 
-    console.log(data)
+    console.log(data);
 };
