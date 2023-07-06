@@ -29,5 +29,15 @@ export const getTodosGroupedByColumn = async () => {
         return acc;
     }, new Map<TypedColumn, Column>());
 
-    console.log(columns)
+    // console.log(columns);
+    // if column doesnt have any tasks in a status, create them empty
+    const columnTypes: TypedColumn[] = ["todo", "inprogress", "done"];
+    for (const columnType of columnTypes) {
+        if (!columns.get(columnType)) {
+            columns.set(columnType, {
+                id: columnType,
+                todos: []
+            })
+        }
+    }
 };
