@@ -1,4 +1,3 @@
-
 import { databases } from "@/appwrite";
 
 export const getTodosGroupedByColumn = async () => {
