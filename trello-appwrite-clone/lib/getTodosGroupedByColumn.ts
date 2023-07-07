@@ -40,4 +40,18 @@ export const getTodosGroupedByColumn = async () => {
             })
         }
     }
+    // sort by column types, somehow this sorts it
+    const sortedColumns = new Map(
+        Array.from(columns.entries()).sort((a, b) => //a, b is two items in array that its looping over
+            columnTypes.indexOf(a[0]) - columnTypes.indexOf(b[0])
+        )
+    )
+
+    const board: Board = {
+        columns: sortedColumns,
+    }
+
+    console.log(board);
+
+    return board;
 };
