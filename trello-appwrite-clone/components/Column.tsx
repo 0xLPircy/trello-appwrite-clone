@@ -56,6 +56,7 @@ function Column({ id, todos, index }: Props) {
                                             )}
 
                                             {provided.placeholder}
+                                            {/* adds space when drag is hovered to accomodate */}
 
                                             <div>
                                                 <button className="flex items-end justify-end p-2">
