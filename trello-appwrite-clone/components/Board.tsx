@@ -33,9 +33,45 @@ const Board = () => {
                 columns: rearrangedColumns,
             });
         }
+
+        // since index stored as numbers instead of ids with dnd library
+        const columns = Array.from(board.columns);
+        const startColIndex = columns[Number(source.droppableId)];
+        const finishColIndex = columns[Number(destination.droppableId)];
+
+        const startCol: Column = {
+            id: startColIndex[0],
+            todos: startColIndex[1].todos,
+        }
+
+        const finishCol: Column = {
+            id: finishColIndex[0],
+            todos: finishColIndex[1].todos,
+        }
+
+        if (!startCol || !finishCol) return;
+
+        if (source.index === destination.index && startCol === finishCol) return;
+
+        const newTodos = startCol.todos;
+        const [todoMoved] = newTodos.splice(source.index, 1);
+
+        if (startCol.id === finishCol.id) {
+            // samecolumn
+            newTodos.splice(destination.index, 0, todoMoved);
+            const newCol = {
+                id: startCol.id,
+                todos: newTodos,
+            }
+            const newColumns = new Map(board.columns);
+            setBoardState({ ...board, columns: newColumns });
+        }
+        else {
+            // different column
+        }
     }
 
-    console.log(board)
+    // console.log(board)
 
     return (
         <DragDropContext onDragEnd={handleOnDragEnd}>
